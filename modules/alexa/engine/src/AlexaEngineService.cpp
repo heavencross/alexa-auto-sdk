@@ -255,6 +255,7 @@ bool AlexaEngineService::configure( const std::vector<std::shared_ptr<std::istre
 
         // register capability with delegate Commented beow line to disable speakerInterface
         //ThrowIfNot( m_capabilitiesDelegate->registerCapability( m_speakerManager ), "registerCapabilityFailed");
+        AACE_DEBUG(LX(TAG, "Disabled m_speakerManager interface"));
 
         std::shared_ptr<alexaClientSDK::capabilityAgents::interactionModel::InteractionModelCapabilityAgent> m_interactionModelCapabilityAgent =
                 alexaClientSDK::capabilityAgents::interactionModel::InteractionModelCapabilityAgent::create( m_directiveSequencer, m_exceptionSender );
@@ -992,6 +993,7 @@ bool AlexaEngineService::registerPlatformInterface( std::shared_ptr<aace::core::
         ReturnIf( registerPlatformInterfaceType<aace::alexa::AudioPlayer>( platformInterface ), true );
         //Commented to disable AlertsInterface
         //ReturnIf( registerPlatformInterfaceType<aace::alexa::Alerts>( platformInterface ), true );
+        AACE_DEBUG(LX(TAG, "Disabled Alerts interface"));
         ReturnIf( registerPlatformInterfaceType<aace::alexa::Notifications>( platformInterface ), true );
         ReturnIf( registerPlatformInterfaceType<aace::alexa::PlaybackController>( platformInterface ), true );
         ReturnIf( registerPlatformInterfaceType<aace::alexa::AuthProvider>( platformInterface ), true );
