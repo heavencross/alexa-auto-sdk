@@ -1143,6 +1143,7 @@ bool AlexaEngineService::registerPlatformInterfaceType( std::shared_ptr<aace::al
 
         // create the alerts engine implementation
         m_alertsEngineImpl = aace::engine::alexa::AlertsEngineImpl::create( alerts, m_directiveSequencer, m_connectionManager, m_connectionManager, m_certifiedSender, m_audioFocusManager, m_contextManager, m_capabilitiesDelegate, m_exceptionSender, std::make_shared<alexaClientSDK::applicationUtilities::resources::audio::AlertsAudioFactory>(), m_speakerManager, m_dataManager );
+        AACE_INFO(LX(TAG, "Registered Alerts Interface"));
         ThrowIfNull( m_alertsEngineImpl, "createAlertsEngineImplFailed" );
 
         return true;
